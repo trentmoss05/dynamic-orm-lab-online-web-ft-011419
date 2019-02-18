@@ -20,6 +20,12 @@ class InteractiveRecord
     column_names.compact
   end
 
+  def initialize(options={})
+    options.each do |p, v|
+      self.send("#{p}", v)
+    end
+  end
+
   def table_name_for_insert
   end
 
